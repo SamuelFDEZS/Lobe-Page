@@ -173,10 +173,6 @@ table {
   transform: scale(1.03);
 }
 
-@font-face {
-  font-family: "Lab Grotesque";
-  src: url("../../assets/Fonts/font/LabGrotesque-Regular.ttf");
-}
 .header__nav {
   width: 45%;
   height: 100%;
@@ -208,4 +204,66 @@ table {
 }
 .nav__list li.list__item--selected a {
   color: black;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Lab Grotesque";
+}
+
+.main {
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+.main__title {
+  font-family: "Lab Grotesque Bold";
+  font-weight: bolder;
+  font-size: 5.5rem;
+  color: rgb(63, 63, 63);
+}
+.main__title span {
+  color: #04ddb2;
+}
+.main__subtitle {
+  width: 40%;
+  font-size: 2rem;
+  margin-top: 1%;
+  text-align: center;
+  line-height: 45px;
+}
+.main__container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+}
+.main__container img {
+  display: inline-block;
+  width: 70%;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+.main__container img:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+  box-shadow: 10px 10px 30px 5px rgba(0, 0, 0, 0.2);
+}
+.main__container iframe {
+  display: none;
+}
+
+@font-face {
+  font-family: "Lab Grotesque";
+  src: url("../../assets/Fonts/font/LabGrotesque-Regular.ttf");
+}
+@font-face {
+  font-family: "Lab Grotesque Bold";
+  src: url("../../assets/Fonts/font/LabGrotesque-Bold.ttf");
+  font-weight: 600;
 }/*# sourceMappingURL=main.css.map */

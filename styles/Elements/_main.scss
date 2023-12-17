@@ -1,0 +1,54 @@
+.main {
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+
+    &__title {
+        font-family: 'Lab Grotesque Bold';
+        font-weight: bolder;
+        font-size: 5.5rem;
+        color: rgb(63, 63, 63);
+
+        & span {
+            color: #04ddb2;
+        }
+    }
+
+    &__subtitle {
+        width: 40%;
+        font-size: 2rem;
+        margin-top: 1%;
+        text-align: center;
+        line-height: 45px;
+    }
+
+    &__container {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3%;
+
+
+        & img {
+            display: inline-block;
+            width: 70%;
+            border-radius: 10px;
+            transition: 0.3s ease;
+
+            &:hover {
+                transform: scale(1.01);
+                cursor: pointer;
+                box-shadow: 10px 10px 30px 5px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        & iframe {
+            display: none;
+        }
+    }
+}
