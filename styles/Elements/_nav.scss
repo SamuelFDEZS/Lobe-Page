@@ -1,39 +1,194 @@
-.header__nav{
+.header__nav {
+
+    @include breakpoint(sm) {
+        @include dropdown;
+    }
+
+    @include breakpoint(xs) {
+        @include dropdown;
+    }
+
+    @include breakpoint(xxs) {
+        @include dropdown;
+    }
+
     width: 45%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin-left: 15%;
+    justify-content: center;
     z-index: inherit;
+    transition: height 0.5s,
+    opacity 0.5s;
 }
 
-.nav__list{
+.nav__list {
+    @include breakpoint(sm) {
+        @include dropdown-list;
+    }
+
+    @include breakpoint(xs) {
+        @include dropdown-list;
+    }
+
+    @include breakpoint(xxs) {
+        @include dropdown-list;
+    }
+
     display: flex;
-    justify-content: space-around;
     align-items: center;
     width: 70%;
     height: 100%;
     font-size: 1.1rem;
     font-family: 'Lab Grotesque';
     font-weight: 600;
-    & li{
-        & a{
+    gap: 10%;
+
+    & li {
+        transition: opacity 0.2s;
+
+        @include breakpoint(sm) {
+            @include dropdown-listElement;
+
+        }
+
+        @include breakpoint(xs) {
+            @include dropdown-listElement;
+        }
+
+        @include breakpoint(xxs) {
+            @include dropdown-listElement;
+        }
+
+        & a {
             display: inline-block;
             text-decoration: none;
             color: rgb(127, 127, 127);
             transition: 0.3s ease-in-out;
 
-            &:hover{
+            @include breakpoint(sm) {
+                width: 100%;
+                height: 100%;
+            }
+
+            @include breakpoint(xs) {
+                width: 100%;
+                height: 100%;
+            }
+
+            @include breakpoint(xxs) {
+                width: 100%;
+                height: 100%;
+            }
+
+            &:hover {
                 transform: scale(1.03);
                 color: black;
             }
         }
 
-        &.list__item--selected{
-            & a{
+        &.list__item--selected {
+            & a {
                 color: black;
             }
         }
+    }
+
+    & .list__button--download {
+        @include breakpoint(sm) {
+            display: block;
+            height: 18%;
+            width: 90%;
+            margin-top: 8%;
+        }
+
+        @include breakpoint(xs) {
+            display: block;
+            height: 18%;
+            width: 90%;
+            margin-top: 8%;
+        }
+
+        @include breakpoint(xxs) {
+            display: block;
+            height: 18%;
+            width: 90%;
+            margin-top: 8%;
+        }
+
+        width: 12%;
+        height: 50%;
+        border: 0;
+        outline: 0;
+        border-radius: 25px;
+        font-family: 'Lab Grotesque';
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        background-color: #04ddb2;
+        color: white;
+        z-index: inherit;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
+        display: none;
+
+    }
+}
+
+.header__hamburguer--active+.header__nav {
+    height: 60vh;
+    visibility: visible;
+    opacity: 1;
+    overflow: hidden;
+
+
+    & li:first-child {
+        @include breakpoint(sm) {
+            margin-top: 5%;
+        }
+
+        @include breakpoint(xs) {
+            margin-top: 5%;
+        }
+
+        @include breakpoint(xxs) {
+            margin-top: 5%;
+        }
+    }
+
+    & .nav__list {
+        z-index: 2;
+    }
+
+    & .list__filter {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        backdrop-filter: blur(10px);
+    }
+}
+
+.header__hamburguer--active {
+    & span{
+        transition: transform 0.5s ease-in-out;
+    }
+
+    & .fa-xmark{
+        transform: rotate(90deg);
+    }
+}
+
+.header__hamburger:not(.header__hamburguer--active) {
+    & span {
+        transition: transform 0.5s ease-in-out;
+    }
+
+    & .fa-xmark {
+        transform: rotate(0deg); /* Ajusta el valor según sea necesario */
     }
 }

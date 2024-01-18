@@ -16,7 +16,45 @@ $breakpoints: (
             @content;
         }
     }
+
     @else {
         @error "Oops, seems like the breakpoint #{$size} isn't defined yet";
     }
+}
+
+
+@mixin dropdown {
+    visibility: hidden;
+    opacity: 0;
+    border-top: 1px solid rgb(219, 219, 219);
+    background-color: rgba(255, 255, 255, 0.63);
+    width: 50%;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    box-shadow: 11px 24px 59px -14px rgba(161,161,161,0.74);
+    @content;
+}
+
+
+@mixin dropdown-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 5%;
+    @content;
+}
+
+@mixin dropdown-listElement{
+    width: 100%;
+    height: 20%;
+    margin-left: 10%;
+    font-size: 1.3rem;
+    @content;
 }
