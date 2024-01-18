@@ -4,6 +4,42 @@
     height: 55vh;
     display: flex;
     justify-content: center;
+
+    @include breakpoint(sm) {
+        @include gridFooter {
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas:
+                "item2 item3"
+                "item4 item5"
+                "item1 item1";
+        }
+    }
+
+    @include breakpoint(xs) {
+        @include gridFooter{
+            height: 120vh;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-areas:
+                "item2 item2"
+                "item3 item3"
+                "item4 item5"
+                "item1 item1";
+        }
+    }
+
+    @include breakpoint(xxs) {
+        @include gridFooter{
+            height: 150vh;
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-areas:
+                "item2 item2"
+                "item3 item3"
+                "item4 item4"
+                "item5 item5"
+                "item1 item1";
+        }
+    }
+
     &__box {
         width: 12%;
         display: flex;
@@ -12,11 +48,51 @@
         justify-content: flex-start;
         margin-left: 10%;
 
-        &:last-child {
-            width: 10%;
-            height: 50%;
+        @include breakpoint(sm) {
+            width: 70%;
+            height: 90%;
+            align-items: center;
             margin-left: 0;
+            margin-top: 30%;
         }
+
+        @include breakpoint(xs) {
+            width: 70%;
+            height: 90%;
+            align-items: center;
+            margin-left: 0;
+            margin-top: 15%;
+        }
+
+        @include breakpoint(xxs) {
+            width: 70%;
+            height: 90%;
+            align-items: center;
+            margin-left: 0;
+            margin-top: 15%;
+        }
+
+        &:first-child {
+            & .box__text {
+                width: 15%;
+
+                @include breakpoint(sm) {
+                    @include fistChilidBox;
+                }
+
+                @include breakpoint(xs) {
+                    @include fistChilidBox;
+                }
+
+                @include breakpoint(xxs) {
+                    @include fistChilidBox;
+                }
+            }
+
+            grid-area: item1;
+
+        }
+
 
         &:nth-child(2) {
             @include breakpoint(md) {
@@ -24,15 +100,39 @@
                 height: 50%;
                 margin-left: 15%;
             }
+
+            grid-area: item2;
+
+        }
+
+        &:nth-child(3) {
+            grid-area: item3;
+
         }
 
         &:nth-child(4) {
+            grid-area: item4;
         }
 
-        &:first-child {
-            & .box__text {
-                width: 15%;
-                margin-left: 5%;
+        &:last-child {
+            width: 10%;
+            height: 50%;
+            margin-left: 0;
+            grid-area: item5;
+
+            @include breakpoint(sm) {
+                width: 30%;
+                height: 100%;
+            }
+
+            @include breakpoint(xs) {
+                width: 30%;
+                height: 100%;
+            }
+
+            @include breakpoint(xxs) {
+                width: 30%;
+                height: 100%;
             }
         }
 
@@ -57,6 +157,7 @@
             flex-direction: row;
             justify-content: space-around;
             font-size: 1em;
+
             @include breakpoint(md) {
                 flex-direction: column;
                 align-items: center;
@@ -64,19 +165,54 @@
                 gap: 10%;
             }
 
+            @include breakpoint(sm) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10%;
+            }
+
+            @include breakpoint(xs) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10%;
+            }
+
+            @include breakpoint(xxs) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 10%;
+            }
+
             & span {
                 display: inline-block;
-                width: 30px;
-                height: 30px;
+                width: 40px;
+                height: 40px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 background-color: #04ddb2;
                 border-radius: 30px;
                 color: white;
-                @include breakpoint(md) {
-                    
+                font-size: 1.2rem;
+
+                @include breakpoint(sm) {
+                    width: 50px;
+                    height: 50px;
                 }
+
+                @include breakpoint(xs) {
+                    width: 50px;
+                    height: 50px;
+                }
+
+                @include breakpoint(xxs) {
+                    width: 50px;
+                    height: 50px;
+                }
+
             }
         }
     }

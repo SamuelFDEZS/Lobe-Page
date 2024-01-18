@@ -35,12 +35,12 @@ $breakpoints: (
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    box-shadow: 11px 24px 59px -14px rgba(161,161,161,0.74);
+    box-shadow: 11px 24px 59px -14px rgba(161, 161, 161, 0.74);
     @content;
 }
 
 
-@mixin dropdown-list{
+@mixin dropdown-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,10 +51,27 @@ $breakpoints: (
     @content;
 }
 
-@mixin dropdown-listElement{
+@mixin dropdown-listElement {
     width: 100%;
     height: 20%;
     margin-left: 10%;
     font-size: 1.3rem;
+    @content;
+}
+
+
+@mixin gridFooter {
+
+    display: grid;
+    grid-template-columns: repeat(2, 30%);
+    place-items: center;
+    gap: 0;
+    @content;
+}
+
+@mixin fistChilidBox {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
     @content;
 }
